@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jayyr2040/dog-tinder.git"
+    "url": "git+https://github.com/weejerrick/dog-tinder.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jayyr2040/dog-tinder/issues"
+    "url": "https://github.com/weejerrick/dog-tinder/issues"
   },
-  "homepage": "https://github.com/Jayyr2040/dog-tinder#readme",
+  "homepage": "https://github.com/weejerrick/dog-tinder#readme",
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
     "bcrypt": "^5.0.1",
