@@ -47,14 +47,14 @@ app.use(
     saveUninitialized: true,
   })
 );
-// app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 //====================
 // Config - Controller
 //====================
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build", "index.html"));
-// });
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
+});
 const usersController = require("./controllers/users");
 const dogsController = require("./controllers/dogs");
 const likeEventsController = require("./controllers/likeEvents");
@@ -67,7 +67,6 @@ app.use("/likeevents", likeEventsController);
 app.use("/browse", browseController);
 app.use("/matches", matchesController);
 app.use("/sessions", sessionsController);
-
 
 app.listen(PORT, () => {
   console.log("Dog matching 🐶 happening on port", PORT);

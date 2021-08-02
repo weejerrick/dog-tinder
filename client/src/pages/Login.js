@@ -1,11 +1,13 @@
 import NewSession from "../components/login/NewSession";
 import Grid from "@material-ui/core/Grid";
 import { Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Footer from "../components/home/Footer";
 import { Typography } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import { Box } from "@material-ui/core";
+import Tooltip from "@material-ui/core/Tooltip";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,8 +33,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const HtmlTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#f5f5f9",
+    color: "rgba(0, 0, 0, 0.87)",
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(10),
+    border: "1px solid #dadde9",
+  },
+}))(Tooltip);
+
 function Login(props) {
   const classes = useStyles();
+
   return (
     <div>
       <Grid container spacing={2}>
@@ -60,8 +73,31 @@ function Login(props) {
                 to="/register"
                 style={{ textDecoration: "none", color: "#d4524d" }}
               >
-                Sign up!
-              </RouterLink>
+                Sign up
+              </RouterLink>{" "}
+              or use a
+              <HtmlTooltip
+                title={
+                  <>
+                    <Typography color="inherit">
+                      User: colorfulmoo <br /> Password: 12345
+                    </Typography>
+                  </>
+                }
+              >
+                <Button
+                  style={{
+                    maxWidth: "50px",
+                    maxHeight: "30px",
+                    minWidth: "50px",
+                    minHeight: "30px",
+                    textTransform: "lowercase",
+                  }}
+                  color="secondary"
+                >
+                  Demo
+                </Button>
+              </HtmlTooltip>
             </Typography>
           </Paper>
         </Grid>
